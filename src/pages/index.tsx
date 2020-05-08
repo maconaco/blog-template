@@ -11,7 +11,7 @@ export default function Index() {
         <div className="w3-row">
           <div className="w3-col l8 s12">
             <div className="w3-card-4 w3-margin w3-white">
-              <img src="/w3images/woods.jpg" alt="Nature" style={{ width: '100%' }} />
+              <img src="/media/snow.jpg" alt="Snow" style={{ width: '100%' }} />
               <div className="w3-container">
                 <h3><b>TITLE HEADING</b></h3>
                 <h5>Title description,
@@ -45,10 +45,15 @@ export default function Index() {
             </div>
             <hr/>
             <div className="w3-card-4 w3-margin w3-white">
-              <img src="/w3images/bridge.jpg" alt="Norway" style={{ width: '100%' }} />
+              <img src="/media/pudding1.jpg" alt="Pudding1" style={{ width: '100%' }} />
               <div className="w3-container">
                 <h3><b>BLOG ENTRY</b></h3>
-                <h5>Title description,<span className="w3-opacity">April 2, 2014</span></h5>
+                <h5>
+                  Title description,
+                  <span className="w3-opacity">
+                    April 2, 2014
+                  </span>
+                </h5>
               </div>
               <div className="w3-container">
                 <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
@@ -78,7 +83,7 @@ export default function Index() {
           </div>
           <div className="w3-col l4">
             <div className="w3-card w3-margin w3-margin-top">
-              <img src="/w3images/avatar_g.jpg" style={{ width: '100%' }} />
+              <img src="/media/kagura1.jpeg" style={{ width: '100%' }} />
               <div className="w3-container w3-white">
                 <h4><b>My Name</b></h4>
                 <p>Just me, myself and I, exploring the universe of uknownment.
@@ -95,7 +100,7 @@ export default function Index() {
               <ul className="w3-ul w3-hoverable w3-white">
                 <li className="w3-padding-16">
                   <img
-                    src="/w3images/workshop.jpg"
+                    src="/media/kagura1.jpeg"
                     alt="Image"
                     className="w3-left w3-margin-right"
                     style={{ width: '50px' }}
@@ -106,7 +111,7 @@ export default function Index() {
                 </li>
                 <li className="w3-padding-16">
                   <img
-                    src="/w3images/gondol.jpg"
+                    src="/media/pudding2.jpg"
                     alt="Image"
                     className="w3-left w3-margin-right"
                     style={{ width: '50px' }}
@@ -117,7 +122,7 @@ export default function Index() {
                 </li>
                 <li className="w3-padding-16">
                   <img
-                    src="/w3images/skies.jpg"
+                    src="/media/pudding2.jpg"
                     alt="Image"
                     className="w3-left w3-margin-right"
                     style={{ width: '50px' }}
@@ -128,7 +133,7 @@ export default function Index() {
                 </li>
                 <li className="w3-padding-16 w3-hide-medium w3-hide-small">
                   <img
-                    src="/w3images/rock.jpg"
+                    src="/media/pudding3.jpg"
                     alt="Image"
                     className="w3-left w3-margin-right"
                     style={{ width: '50px' }}
