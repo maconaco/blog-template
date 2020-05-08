@@ -1,97 +1,55 @@
 import * as React from 'react';
 
+import HeadLine from '../components/HeadLine';
+import Profile from '../components/Profile';
+import { Article } from '../types';
+
+const title = 'プリンの世界';
+const name = '異世界転生プリン';
+
+const articles: Article[] = [
+  {
+    id: 'article1',
+    title: 'Next.js と microCMSでブログ作成',
+    content: `
+Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
+Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim,
+ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue
+ullam corper.
+Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+porta lectus vitae, ultricies congue gravida diam non fringilla.`,
+    createdAt: 'May 9, 2020',
+    image: '/media/nextjs.png',
+    likes: 0,
+  },
+  {
+    id: 'article2',
+    title: 'w3.css でサイト制作',
+    content: `
+w3.css は cssフレームワーク。React のコンポーネントを提供するスタイルのフレームワーク
+よりこのシンプルなCSSフレームワークでの開発は拡張性が高くデザインが自由。`,
+    createdAt: 'May 9, 2019',
+    image: 'media/w3css.jpg',
+    likes: 2,
+  }
+];
+
 export default function Index() {
   return (
     <>
       <div className="w3-content" style={{ maxWidth: '1400px' }}>
         <header className="w3-container w3-center w3-padding-32">
-          <h1><b>MY BLOG</b></h1>
-          <p>Welcome to the blog of <span className="w3-tag">unknown</span></p>
+          <h1><b>{title}</b></h1>
+          <p><span className="w3-tag">{name}</span>のブログ</p>
         </header>
         <div className="w3-row">
           <div className="w3-col l8 s12">
-            <div className="w3-card-4 w3-margin w3-white">
-              <img src="/media/snow.jpg" alt="Snow" style={{ width: '100%' }} />
-              <div className="w3-container">
-                <h3><b>TITLE HEADING</b></h3>
-                <h5>Title description,
-                  <span className="w3-opacity">April 7, 2014</span>
-                </h5>
-              </div>
-              <div className="w3-container">
-                <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
-                  Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim,
-                  ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue
-                  ullam corper.
-                  Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
-                  porta lectus vitae, ultricies congue gravida diam non fringilla.
-                </p>
-                <div className="w3-row">
-                  <div className="w3-col m8 s12">
-                    <p>
-                      <button className="w3-button w3-padding-large w3-white w3-border">
-                        <b>READ MORE »</b>
-                      </button>
-                    </p>
-                  </div>
-                  <div className="w3-col m4 w3-hide-small">
-                    <p><span className="w3-padding-large w3-right">
-                      <b>Comments</b>
-                      <span className="w3-tag">0</span>
-                    </span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr/>
-            <div className="w3-card-4 w3-margin w3-white">
-              <img src="/media/pudding1.jpg" alt="Pudding1" style={{ width: '100%' }} />
-              <div className="w3-container">
-                <h3><b>BLOG ENTRY</b></h3>
-                <h5>
-                  Title description,
-                  <span className="w3-opacity">
-                    April 2, 2014
-                  </span>
-                </h5>
-              </div>
-              <div className="w3-container">
-                <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
-                  Sedmattis nunc id lorem euismod placerat. Vivamus porttitor magna enim,
-                  ac accumsan tortor cursus at.
-                  Phasellus sed ultricies mi non congue ullam corper.
-                  Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
-                  porta lectus vitae, ultricies congue gravida diam non fringilla.
-                </p>
-                <div className="w3-row">
-                  <div className="w3-col m8 s12">
-                    <p>
-                      <button className="w3-button w3-padding-large w3-white w3-border">
-                        <b>READ MORE »</b>
-                      </button>
-                    </p>
-                  </div>
-                  <div className="w3-col m4 w3-hide-small">
-                    <p><span className="w3-padding-large w3-right">
-                      <b>Comments</b>
-                      <span className="w3-badge">2</span>
-                    </span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {articles.map(article => (
+              <HeadLine key={article.id} {...article} />
+            ))}
           </div>
           <div className="w3-col l4">
-            <div className="w3-card w3-margin w3-margin-top">
-              <img src="/media/kagura1.jpeg" style={{ width: '100%' }} />
-              <div className="w3-container w3-white">
-                <h4><b>My Name</b></h4>
-                <p>Just me, myself and I, exploring the universe of uknownment.
-                    I have a heart of love and a interest of lorem ipsum and mauris
-                    neque quam blog. I want to share my world with you.
-                </p>
-              </div>
-            </div>
+            <Profile />
             <hr />
             <div className="w3-card w3-margin">
               <div className="w3-container w3-padding">
