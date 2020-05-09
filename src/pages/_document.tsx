@@ -41,6 +41,7 @@ export default class MyDocument extends Document {
               outline: none;
             }
             .flex {
+              align-items: center;
               display: flex;
             }
             .text {

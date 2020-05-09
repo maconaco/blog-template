@@ -22,10 +22,10 @@ export default ({
         src={image}
         style={{ width: '100%' }}
       />
-      <div className="w3-container">
-        <h3>
-          <b>{title} &nbsp;</b>
-          <span className="w3-opacity">{createdAt}</span>
+      <div className="w3-container hl-title">
+        <h3 className="flex">
+          <b className="flex">{title} &nbsp;</b>
+          <h4 className="w3-opacity">{createdAt}</h4>
         </h3>
       </div>
       <div className="w3-container">
@@ -49,6 +49,9 @@ export default ({
         </div>
       </div>
       <style jsx>{`
+        .hl-title {
+          margin: 0;
+        }
         .img-cutout {
           object-fit: cover;
           width: 100%;
