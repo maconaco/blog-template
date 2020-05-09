@@ -1,9 +1,9 @@
 {
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "next build && ts-node --project tsconfig.server.json ./src/server",
-    "build": "next build && tsc --project tsconfig.server.json",
-    "start": "node ./build/server.js",
+    "dev": "next build && next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint --fix ./src/**/*.{ts,tsx,test.tsx,stories.tsx}"
   },
   "engines": {
