@@ -64,6 +64,7 @@
     "redux-devtools-extension": "^2.13.8",
     "regenerator-runtime": "^0.13.5",
     "styled-jsx-plugin-sass": "^1.0.0",
+    "swr": "^0.2.0",
     "typescript": "^3.9.2",
     "webpack": "^4.41.2"
   }
