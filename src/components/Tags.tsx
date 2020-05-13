@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import Card from 'components/Card';
-import Container from 'components/Container';
+import Card from './Card';
+import Container from './Container';
 import { Tag as TagType } from 'src/types';
-import Tag from 'components/Tag';
+import Tag from './Tag';
 
 type Props = {
   tags: TagType[];

@@ -1,35 +1,31 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import { GetServerSideProps } from 'next';
 import ArticleHeader from 'components/ArticleHeader';
 import { articles } from '@/data';
 
-const fetcher = async (url = 'http://localhost:3000/api/articles/[id]') => {
-  const res = await fetch(url);
-  const data = await res.json();
-
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-};
-
 export default function Article() {
-  const { query } = useRouter();
-  const { data, error } = useSWR(
-    () => query.id && `/api/article/${query.id}`,
-    fetcher
-  );
-
-  if (error) return <div>{error.message}</div>;
-  if (!data) return <div>Loading...</div>;
-
   return (
     <>
-      {!data && <div>{error.message}</div>}
       {articles.map((article) => (
         <ArticleHeader key={article.id} articleTitle={article.title} />
       ))}
     </>
   );
 }
+
+export const ArticleProps: GetServerSideProps = async context => {
+  const articleId = context.query.id;
+  const res = await fetch(`http://localhost:3000/api/articles/${articleId}`);
+  const data = await res.json();
+
+  return {
+    props: {
+      id: data.id as string ,
+      title: data.title as string,
+      content: data.content as string,
+      createdAt: data.createdAt as string,
+      image: data.image as string,
+      likes: data.likes as number,
+    } ,
+  };
+};
