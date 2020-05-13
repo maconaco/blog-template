@@ -2,8 +2,9 @@ import * as React from 'react';
 import { GetServerSideProps } from 'next';
 import ArticleHeader from 'components/ArticleHeader';
 import { articles } from '@/data';
+import { Article } from 'src/types';
 
-export default function Article() {
+export default function ArticlePage() {
   return (
     <>
       {articles.map((article) => (
@@ -13,19 +14,10 @@ export default function Article() {
   );
 }
 
-export const ArticleProps: GetServerSideProps = async context => {
+export const ArticleProps: GetServerSideProps<Article> = async context => {
   const articleId = context.query.id;
   const res = await fetch(`http://localhost:3000/api/articles/${articleId}`);
-  const data = await res.json();
+  const data = await res.json() as Article;
 
-  return {
-    props: {
-      id: data.id as string ,
-      title: data.title as string,
-      content: data.content as string,
-      createdAt: data.createdAt as string,
-      image: data.image as string,
-      likes: data.likes as number,
-    } ,
-  };
+  return { props: data };
 };
