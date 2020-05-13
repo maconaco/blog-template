@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { Article } from 'src/types';
+import { Article } from '../types';
 
 type Props = Article & {
 };

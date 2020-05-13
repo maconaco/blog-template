@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Article } from 'src/types';
+import { Article } from '../types';
 import Card from './Card';
 import Post from './Post';
 
