@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { Article } from '../types';
-import Card from './Card';
-import Post from './Post';
+import { Article } from 'src/types';
+import Card from 'components/Card';
+import Post from 'components/Post';
 
 type Props = {
   posts: Article[];

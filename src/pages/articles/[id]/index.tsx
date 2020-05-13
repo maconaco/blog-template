@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
-import ArticleHeader from '../../../components/ArticleHeader';
-import { articles } from '../../../../data';
-// import { Message } from '../../../types';
+import ArticleHeader from 'components/ArticleHeader';
+import { articles } from '@/data';
 
 const fetcher = async (url = 'http://localhost:3000/api/articles/[id]') => {
   const res = await fetch(url);

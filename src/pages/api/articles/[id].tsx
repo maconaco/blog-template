@@ -1,4 +1,4 @@
-import { articles } from '../../../../data';
+import { articles } from '@/data';
 
 export default ({ query: { id } }, res) => {
   const articleFound = articles.find((article) => article.id === id); // Article | undefined

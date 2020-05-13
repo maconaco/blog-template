@@ -1,7 +1,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 
-import { Article } from '../types';
+import { Article } from 'src/types';
 
 type Props = Article & {
 };
