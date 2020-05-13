@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import HeadLine from '../components/HeadLine';
-import Profile from '../components/Profile';
-import Tags from '../components/Tags';
+import HeadLine from 'components/HeadLine';
+import Profile from 'components/Profile';
+import Tags from 'components/Tags';
 import { Article, Tag } from '../types';
-import PopularPosts from '../components/PopularPosts';
+import PopularPosts from 'components/PopularPosts';
 
 const title = 'プリンの世界';
 const name = '異世界転生プリン';
@@ -32,7 +32,7 @@ w3.css は cssフレームワーク。React のコンポーネントを提供す
     createdAt: 'May 9, 2019',
     image: 'media/w3css.jpg',
     likes: 2,
-  }
+  },
 ];
 
 const posts: Article[] = [
@@ -46,14 +46,13 @@ const posts: Article[] = [
     likes: 1,
   },
   {
-
     id: 'article3',
     title: '異世界転生できるプリンBest3',
     content: 'プリンで異世界転生が流行っています！',
     createdAt: '',
     image: 'media/pudding2.jpg',
     likes: 4,
-  }
+  },
 ];
 
 const tags: Tag[] = [
@@ -79,12 +78,16 @@ export default function Index() {
     <>
       <div className="w3-content" style={{ maxWidth: '1400px' }}>
         <header className="w3-container w3-center w3-padding-32">
-          <h1><b>{title}</b></h1>
-          <p><span className="w3-tag">{name}</span>&nbsp;のブログ</p>
+          <h1>
+            <b>{title}</b>
+          </h1>
+          <p>
+            <span className="w3-tag">{name}</span>&nbsp;のブログ
+          </p>
         </header>
         <div className="w3-row">
           <div className="w3-col l8 s12">
-            {articles.map(article => (
+            {articles.map((article) => (
               <HeadLine key={article.id} {...article} />
             ))}
           </div>
@@ -93,25 +96,21 @@ export default function Index() {
             <hr />
             <PopularPosts posts={posts} />
             <hr />
-            <Tags tags={tags}/>
+            <Tags tags={tags} />
           </div>
         </div>
         <br />
       </div>
       <footer className="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-        <button
-          className="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">
+        <button className="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">
           Previous
         </button>
-        <button
-          className="w3-button w3-black w3-padding-large w3-margin-bottom">
+        <button className="w3-button w3-black w3-padding-large w3-margin-bottom">
           Next »
         </button>
         <p>
           Powered by
-          <a href="https://www.w3schools.com/w3css/default.asp">
-            w3.css
-          </a>
+          <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a>
         </p>
       </footer>
     </>

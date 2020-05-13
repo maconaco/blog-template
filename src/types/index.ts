@@ -12,3 +12,7 @@ export type Tag = {
   name: string;
   color: string;
 };
+
+export type Message = {
+  massage: string;
+};
