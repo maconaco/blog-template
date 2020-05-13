@@ -2,7 +2,7 @@ import * as React from "react";
 
 import HeadLine from "../components/HeadLine";
 import Profile from "../components/Profile";
-import Tags from "@/components/Tags";
+import Tags from "../components/Tags";
 import { Article, Tag } from "../types";
 import PopularPosts from "../components/PopularPosts";
 
