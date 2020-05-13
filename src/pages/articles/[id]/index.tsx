@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-
-import ArticleHeadr from "./../../../components/ArticleHeader";
+import ArticleHeader from "../../../components/ArticleHeader";
 import { articles } from "../../../../data";
 // import { Message } from '../../../types';
 
@@ -18,17 +17,19 @@ const fetcher = async (url = "http://localhost:3000/api/articles/[id]") => {
 
 export default function Article() {
   const { query } = useRouter();
-  const { data, error } = useSWR(() => {
-    return query.id && `../../api/articles/${query.id}`;
-  }, fetcher);
+  const { data, error } = useSWR(
+    () => query.id && `/api/article/${query.id}`,
+    fetcher
+  );
 
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
     <>
+      {!data && <div>{error.message}</div>}
       {articles.map((article) => (
-        <ArticleHeadr key={article.id} articleTitle={article.title} />
+        <ArticleHeader key={article.id} articleTitle={article.title} />
       ))}
     </>
   );
