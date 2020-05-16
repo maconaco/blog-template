@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { GetServerSideProps } from 'next';
 import ArticleHeader from 'components/ArticleHeader';
+import ArticleContent from 'components/ArticleContent';
 import { Article } from 'src/types';
+import ArticleContainer from 'components/ArticleContainer';
 
 type Props = {
   article: Article;
@@ -10,8 +12,12 @@ type Props = {
 export default function ArticlePage({ article }: Props) {
   return (
     <>
-      <ArticleHeader articleTitle={article.title} />
-      <div>{article.content}</div>
+      <div className="w3-content" style={{ maxWidth: '1400px' }}>
+        <ArticleContainer>
+          <ArticleHeader articleTitle={article.title} />
+          <ArticleContent articleContent={article.content} />
+        </ArticleContainer>
+      </div>
     </>
   );
 }
