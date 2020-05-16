@@ -1,23 +1,27 @@
 import * as React from 'react';
 import { GetServerSideProps } from 'next';
 import ArticleHeader from 'components/ArticleHeader';
-import { articles } from '@/data';
 import { Article } from 'src/types';
 
-export default function ArticlePage() {
+type Props = {
+  article: Article;
+};
+
+export default function ArticlePage({ article }: Props) {
   return (
     <>
-      {articles.map((article) => (
-        <ArticleHeader key={article.id} articleTitle={article.title} />
-      ))}
+      <ArticleHeader articleTitle={article.title} />
+      <div>{article.content}</div>
     </>
   );
 }
 
-export const ArticleProps: GetServerSideProps<Article> = async context => {
-  const articleId = context.query.id;
+export const getServerSideProps: GetServerSideProps<Props> = async (
+  context
+) => {
+  const articleId = context.query.articleId;
   const res = await fetch(`http://localhost:3000/api/articles/${articleId}`);
-  const data = await res.json() as Article;
+  const article = (await res.json()) as Article;
 
-  return { props: data };
+  return { props: { article } };
 };
