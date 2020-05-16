@@ -6,12 +6,12 @@ export default (
   { query: { id } }: { query: { id: string } },
   res: NextApiResponse
 ): void => {
-  const foundArticle: Article | undefined = articles.find(
+  const articleFound: Article | undefined = articles.find(
     (article: Article) => article.id === id
   );
 
-  if (foundArticle) {
-    res.status(200).send(foundArticle);
+  if (articleFound) {
+    res.status(200).send(articleFound);
     return;
   }
   res.status(404).json({ message: `Article with id: ${id} not found.` });
