@@ -6,7 +6,7 @@ export default (
   { query: { id } }: { query: { id: string } },
   res: NextApiResponse
 ): void => {
-  const articleFound: Article | undefined = articles.find(
+  const articleFound = articles.find(
     (article: Article) => article.id === id
   );
 
