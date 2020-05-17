@@ -4,10 +4,11 @@ import { Article } from '../types';
 
 type Props = {
   articleTitle: Article['title'];
+  style: React.CSSProperties;
 };
 
-export default ({ articleTitle }: Props) => {
+export default ({ articleTitle, style }: Props) => {
   return (
-    <h1>{articleTitle}</h1>
+    <h1 style={style}>{articleTitle}</h1>
   );
 };
