@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import ArticleHeader from 'components/ArticleHeader';
 import ArticleContent from 'components/ArticleContent';
 import { Article } from 'src/types';
-import ArticleContainer from 'components/ArticleContainer';
+import Container from 'components/Container';
 
 type Props = {
   article: Article;
@@ -13,10 +13,10 @@ export default function ArticlePage({ article }: Props) {
   return (
     <>
       <div className="w3-content" style={{ maxWidth: '1400px' }}>
-        <ArticleContainer>
+        <Container>
           <ArticleHeader articleTitle={article.title} />
           <ArticleContent articleContent={article.content} />
-        </ArticleContainer>
+        </Container>
       </div>
     </>
   );
