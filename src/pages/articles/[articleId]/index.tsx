@@ -13,7 +13,7 @@ export default function ArticlePage({ article }: Props) {
   return (
     <>
       <div className="w3-content" style={{ maxWidth: '1400px' }}>
-        <Container>
+        <Container style={{ margin: '20px auto', width: '800px' }}>
           <ArticleHeader articleTitle={article.title} />
           <ArticleContent articleContent={article.content} />
         </Container>

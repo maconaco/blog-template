@@ -1,16 +1,21 @@
-import * as React from "react";
-import clsx from "clsx";
+import * as React from 'react';
+import clsx from 'clsx';
 
 type Props = {
   children: React.ReactNode;
   className?: string;
+  style: React.CSSProperties;
 };
 
-export default ({ children, className = "" }: Props): React.ReactElement => {
+export default ({
+  children,
+  className = '',
+  style,
+}: Props): React.ReactElement => {
   return (
     <div
-      className={clsx("w3-container", "w3-white", className)}
-      style={{ margin: "auto" }}
+      className={clsx('w3-container', className)}
+      style={{ margin: 'auto', ...style }}
     >
       {children}
     </div>

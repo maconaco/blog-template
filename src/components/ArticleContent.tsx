@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Article } from "../types";
+import { Article } from '../types';
 
 type Props = {
-  articleContent: Article["content"];
+  articleContent: Article['content'];
 };
 
 export default ({ articleContent }: Props) => {
