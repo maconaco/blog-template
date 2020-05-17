@@ -4,13 +4,13 @@ const articles: Article[] = [
   {
     id: 'article1',
     title: 'Next.js と microCMSでブログ作成',
-    content: `
-  Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
+    content: `Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
   Sed mattis nunc id lorem euismod placerat.
   Vivamus porttitor magna enim, ac accumsan tortor cursus at.
   Phasellus sed ultricies mi non congue ullam corper.
   Praesent tincidunt sed tellus ut rutrum.
-  Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.`,
+  Sed vitae justo condimentum, porta lectus vitae,
+  ultricies congue gravida diam non fringilla.`,
     createdAt: 'May 9, 2020',
     image: '/media/nextjs.png',
     likes: 0,
